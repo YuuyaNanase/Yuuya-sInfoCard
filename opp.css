@@ -1,0 +1,304 @@
+:root {  
+  --bg-main: #1a1f2b; /* Deep muted blue background */
+  --bg-secondary: #212735; /* Soft dark background for sections */
+  --bg-tertiary: #2a3348; /* Muted, lighter background for cards */
+  --accent-blue: #5a7a92; /* Muted blue accent for highlights */
+  --accent-blue-light: #7fa6bc; /* Lighter, subtle blue for hover effects */
+  --accent-muted: #4e5d73; /* Soft, desaturated blue for text */
+  --text-main: #d6e1eb; /* Lighter text to maintain readability */
+  --text-muted: #9aa5b7; /* Lighter muted text for subtle elements */
+  --border-color: #3c4558; /* Subtle border color for separation */
+  --shadow: rgba(0, 0, 0, 0.35); /* Softer shadow for depth */
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.profile-container {
+  max-width: 860px;
+  background-color: var(--bg-secondary);
+  margin: auto;
+  border: 1px solid var(--border-color);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px var(--shadow);
+  flex-grow: 1;
+  margin-top: 80px; /* Add space at the top to account for the fixed header */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--accent-muted);
+  padding-bottom: 6px;
+  font-size: 1rem;
+  color: var(--accent-blue);
+  position: fixed; /* Make the header fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-main); /* Ensure header blends with the body */
+  z-index: 1000; /* Ensure it's above other elements */
+  padding: 10px 0; /* Add padding to the header */
+  box-shadow: 0 4px 8px var(--shadow); /* Optional shadow for effect */
+}
+
+header input[type="text"] {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+  color: var(--text-main);
+}
+
+header input[type="text"]::placeholder {
+  color: var(--text-muted);
+}
+
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.left, .center, .right {
+  flex: 1 1 240px;
+  min-width: 200px;
+}
+
+.card {
+  background-color: var(--bg-tertiary);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.avatar {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 6px var(--shadow);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+.username {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--accent-blue-light);
+  margin-bottom: 4px;
+}
+
+.section {
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--bg-secondary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.section h3 {
+  font-size: 1rem;
+  color: var(--accent-blue);
+  margin-bottom: 6px;
+  border-bottom: 1px dashed var(--accent-muted);
+  padding-bottom: 3px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--accent-blue-light);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: var(--accent-blue);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--accent-blue-light);
+  transform: scale(1.15);
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 16px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Updated and balanced "Things I Love" */
+.section.likes {
+  padding: 10px;
+  background-color: var(--bg-tertiary);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.likes h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--accent-blue);
+  text-align: center;
+}
+
+.likes .love-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.likes .love-item a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background-color: var(--bg-secondary);
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.likes .love-item a:hover {
+  transform: scale(1.1);
+  background-color: var(--accent-blue-light);
+  color: var(--bg-main);
+}
+
+.likes .love-item i {
+  font-size: 14px;
+}
+
+.likes .love-item p {
+  color: var(--text-main);
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--accent-blue-light);
+  text-decoration: underline;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input[type="text"] {
+  padding: 6px 32px 6px 10px;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+  color: var(--text-main);
+}
+
+.search-box i.fa-search {
+  position: absolute;
+  right: 10px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.love-enhanced {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px var(--shadow);
+  text-align: center;
+}
+
+.love-enhanced h3 {
+  color: var(--accent-blue);
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed var(--accent-blue);
+  padding-bottom: 6px;
+}
+
+.love-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.love-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--bg-secondary);
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  color: var(--text-main);
+}
+
+.love-list li i {
+  color: var(--accent-blue);
+}
+
+.love-list li:hover {
+  background-color: var(--accent-blue-light);
+  color: #fff;
+}
+
+.love-list li:hover i {
+  color: #fff;
+}

@@ -1,0 +1,145 @@
+:root {
+  --bg-main: #1a1f2b;
+  --bg-secondary: #212735;
+  --bg-tertiary: #2a3348;
+  --accent-blue: #5a7a92;
+  --accent-blue-light: #7fa6bc;
+  --accent-muted: #4e5d73;
+  --text-main: #d6e1eb;
+  --text-muted: #9aa5b7;
+  --border-color: #3c4558;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --bg-card: #2a3348;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.profile-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--accent-muted);
+  padding: 10px 20px;
+  background: var(--bg-main);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+header .logo {
+  font-size: 1.5rem;
+  color: var(--accent-blue);
+}
+
+header .search-box input[type="text"] {
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-tertiary);
+  color: var(--text-main);
+  transition: border 0.3s ease;
+}
+
+header .search-box input[type="text"]:focus {
+  border-color: var(--accent-blue);
+}
+
+.back-button button {
+  background-color: transparent;
+  border: none;
+  padding: 8px 15px;
+  font-size: 1rem;
+  color: var(--accent-blue); /* Back button text color */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.back-button button:hover {
+  background-color: var(--accent-blue-light); /* Light accent on hover */
+  color: var(--bg-main); /* Change text color on hover */
+  border-radius: 8px; /* Rounded corners for a smoother effect */
+}
+
+.back-button a {
+  color: inherit; /* Ensure the link inherits the button text color */
+  text-decoration: none;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px var(--shadow);
+  margin-top: 80px;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  color: var(--accent-blue);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.love-list {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  list-style-type: none;
+}
+
+.love-list li {
+  background: var(--bg-tertiary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: var(--text-main);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.love-list li:hover {
+  background: var(--bg-secondary);
+  transform: scale(1.05);
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 2px solid var(--border-color);
+}
+
+.footer a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  color: var(--accent-blue-light);
+}
